@@ -15,6 +15,8 @@ $ pip install tnn-pytorch
 
 ## Usage
 
+Pelease refer to `example.py` to understand the use of modules.
+
 ### Tno
 
 
