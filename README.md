@@ -37,7 +37,7 @@ glu_dim=your_embedding_dim,
 prenorm=True,
 norm_type="simplermsnorm",
 # gtu params
-causal=False,
+causal=False, # True for language model
 gtu_act="silu",
 expand_ratio=3,
 use_decay=True,
@@ -60,7 +60,7 @@ embed_dim=your_embedding_dim,
 num_heads=1,
 act_fun="silu",
 norm_type="simplermsnorm",
-causal=False,
+causal=False, # True for language model
 expand_ratio=3,
 use_decay=True,
 gamma=0.9 for seqlen < 100, else 0.99
