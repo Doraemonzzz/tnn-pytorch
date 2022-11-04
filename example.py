@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from tnn import Gtu, Tno
+from tnn import Gtu, TnnLayer, Tno
 
 # batch size
 b = 2
@@ -44,3 +44,21 @@ for dim in [-2]:
         print(f"input size is {x.shape}")
         print(f"output size is {y.shape}")
 print("======End Test Gtu=====")
+
+print("======Start Test Tnn Layer=====")
+x = torch.rand(b, n, e)
+models = [
+    TnnLayer(
+        dim=e,
+        num_heads=1,
+        rpe_embedding=d,
+        glu_dim=e,
+    )
+]
+
+for dim in [-2]:
+    for model in models:
+        y = model(x)
+        print(f"input size is {x.shape}")
+        print(f"output size is {y.shape}")
+print("======End Test Tnn Layer=====")

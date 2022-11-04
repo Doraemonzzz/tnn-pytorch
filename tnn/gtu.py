@@ -40,7 +40,6 @@ class Gtu(nn.Module):
 
         d1 = int(self.expand_ratio * embed_dim)
         d1 = (d1 // self.num_heads) * self.num_heads
-        d2 = embed_dim
         self.head_dim = d1 // num_heads
         # linear projection
         self.v_proj = nn.Linear(embed_dim, d1, bias=bias)
@@ -66,7 +65,6 @@ class Gtu(nn.Module):
         )
         # norm
         self.norm_type = norm_type
-        self.pre_norm = get_norm_fn(self.norm_type)(d2)
         self.use_norm = use_norm
         if self.use_norm:
             self.norm = get_norm_fn(self.norm_type)(d1)
@@ -75,7 +73,6 @@ class Gtu(nn.Module):
         # x: b, h, w, d
         num_heads = self.num_heads
 
-        shortcut, x = x, self.pre_norm(x)
         if self.resi_param:
             shortcut = shortcut * self.d
         u = self.act(self.u_proj(x))
@@ -88,6 +85,7 @@ class Gtu(nn.Module):
         if self.use_norm:
             output = self.norm(output)
             
-        output = self.o(output) + shortcut
+        output = self.o(output)
         
         return output
+

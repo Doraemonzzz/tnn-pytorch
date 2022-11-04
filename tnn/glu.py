@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from ..helpers import get_activation_fn, print_params
+from .helpers import get_activation_fn, print_params
 
 
 class GLU(nn.Module):
