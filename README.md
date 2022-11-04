@@ -11,7 +11,8 @@ This repository contains the Rpe, Tno, Gtu and Tnn layers mentioned in [Toeplitz
 $ pip install tnn-pytorch
 ```
 
-
+## Introduction
+wip.
 
 ## Usage
 
@@ -25,7 +26,7 @@ Pelease refer to `example.py` to understand the use of modules.
 
 ### TnnLayer
 
-We recommend initializing `TnnLayer `with the following configuration, the number of model parameters is approximately equivalent to a standard transformer layer:
+We recommend initializing `TnnLayer`with the following configuration, the number of model parameters is approximately equivalent to a standard transformer layer:
 
 ```
 dim=your_embedding_dim, 
@@ -75,4 +76,5 @@ rpe_layers=1,
 - [x] Tnn layer
 - [ ] Tnn model
 - [x] Recommended configuration
+- [ ] Introduction
 
