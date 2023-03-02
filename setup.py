@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='tnn-pytorch',
-    version='0.0.4',
+    version='0.0.5',
     description='Toeplitz Neural Network for Sequence Modeling',
     author='Doraemonzzz',
     author_email='doraemon_zzz@163.com',
