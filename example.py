@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from tnn import Gtu, TnnLayer, Tno
+from tnn_pytorch import Gtu, TnnLayer, Tno
 
 # batch size
 b = 2
