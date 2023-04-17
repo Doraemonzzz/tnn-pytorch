@@ -35,7 +35,7 @@ class TnnLayer(nn.Module):
             act_fun=gtu_act,
             norm_type=norm_type,
             causal=causal,
-            expand_ratio=3,
+            expand_ratio=expand_ratio,
             use_decay=use_decay,
             gamma=gamma,
             # rpe params
